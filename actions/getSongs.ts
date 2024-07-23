@@ -7,13 +7,16 @@ const getSongs = async (): Promise<Song[]> => {
     cookies: cookies,
   });
 
-  const { data, error } = await supabase.from('songs').select('*').order('created_at', {ascending: false});
+  const { data, error } = await supabase
+    .from("songs")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   if (error) {
     console.error(error);
   }
 
   return (data as any) || [];
-}
+};
 
 export default getSongs;
