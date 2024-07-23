@@ -7,5 +7,4 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /app/spotify_clone/node_modules
       - .:/app/spotify_clone
